@@ -80,13 +80,14 @@ module.exports = {
   },
   postOrganisasi: async (req, res) => {
     try {
-      const { address, nama, phone, pic, idNumber } = req.body;
+      const { address, nama, phone, pic, idNumber, type } = req.body;
       const setData = {
         address,
         nama,
         phone,
         pic,
         idNumber,
+        type,
         image: req.file ? req.file.filename : null,
       };
       const result = await organisasiModel.postOrganisasi(setData);
