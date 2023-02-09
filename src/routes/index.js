@@ -7,6 +7,7 @@ const merchantRoutes  = require("../modules/merchant/merchantRoutes");
 const menuRoutes  = require("../modules/menu/menuRoutes");
 const orderRoutes  = require("../modules/orderCustomer/orderRoutes");
 const organisasiRoutes  = require("../modules/organisasi/organisasiRoutes");
+const driverRoutes  = require("../modules/driver/driverRoutes");
 
 Router.use("/auth", authRoutes);
 Router.use("/authDriver", authDriverRoutes );
@@ -14,6 +15,8 @@ Router.use("/merchant", merchantRoutes );
 Router.use("/menu", menuRoutes );
 Router.use("/order", orderRoutes );
 Router.use("/organisasi", organisasiRoutes );
+Router.use("/driver", driverRoutes );
+
 
 
 module.exports = Router;
