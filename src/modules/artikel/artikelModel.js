@@ -18,7 +18,7 @@ module.exports = {
   getartikelById: (id) =>
     new Promise((resolve, reject) => {
       connection.query(
-        "SELECT * FROM artikel WHERE id_merchant = ?",
+        "SELECT * FROM artikel WHERE id = ?",
         id,
         (err, result) => {
           if (!err) {
