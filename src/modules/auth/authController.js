@@ -94,6 +94,7 @@ module.exports = {
         refreshToken,
         name: payload.nama,
         role: payload.role,
+        idUse: payload.id
       });
     } catch (error) {
       return helperWrapper.response(

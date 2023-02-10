@@ -75,9 +75,10 @@ module.exports = {
     },
   postMerchant: async (req, res) => {
     try {
-      const { namaResto, alamat, phone, detailGedung, jamOprasi, kategori } =
+      const { idUse, namaResto, alamat, phone, detailGedung, jamOprasi, kategori } =
         req.body;
       const setData = {
+        idUse,
         namaResto,
         alamat,
         phone,
