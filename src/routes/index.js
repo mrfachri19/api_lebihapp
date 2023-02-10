@@ -9,6 +9,7 @@ const orderRoutes  = require("../modules/orderCustomer/orderRoutes");
 const organisasiRoutes  = require("../modules/organisasi/organisasiRoutes");
 const driverRoutes  = require("../modules/driver/driverRoutes");
 const ArtikelRoutes  = require("../modules/artikel/artikelRoutes");
+const Sharingrecycle  = require("../modules/sharingrecyle/sharingrecyleRoutes");
 
 Router.use("/auth", authRoutes);
 Router.use("/authDriver", authDriverRoutes );
@@ -18,6 +19,7 @@ Router.use("/order", orderRoutes );
 Router.use("/organisasi", organisasiRoutes );
 Router.use("/driver", driverRoutes );
 Router.use("/artikel", ArtikelRoutes );
+Router.use("/food", Sharingrecycle );
 
 
 
