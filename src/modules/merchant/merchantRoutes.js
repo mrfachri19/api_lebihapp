@@ -6,6 +6,7 @@ const merchantController = require("./merchantController");
 
 Router.get("/", merchantController.getAllMerchant);
 Router.get("/:id", merchantController.getMerchantById);
+Router.get("/akun/:id", merchantController.getMerchantAkunById);
 Router.post("/", merchantController.postMerchant);
 
 module.exports = Router;

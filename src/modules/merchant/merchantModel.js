@@ -29,6 +29,20 @@ module.exports = {
         }
       );
     }),
+    getMerchantAkunById: (id) =>
+    new Promise((resolve, reject) => {
+      connection.query(
+        "SELECT * FROM merchant WHERE id_merchant = ?",
+        id,
+        (err, result) => {
+          if (!err) {
+            resolve(result);
+          } else {
+            reject(new Error(`SQL : ${err.sqlMessage}`));
+          }
+        }
+      );
+    }),
   getCountMerchant: (search) =>
     new Promise((resolve, reject) => {
       connection.query(

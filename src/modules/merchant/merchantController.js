@@ -73,6 +73,28 @@ module.exports = {
         );
       }
     },
+    getMerchantAkunById: async (req, res) => {
+      try {
+        const { id } = req.params;
+        const result = await merchantModel.getMerchantAkunById(id);
+        if (result.length < 1) {
+          return helperWrapper.response(
+            res,
+            404,
+            `data by id ${id} not found !`,
+            null
+          );
+        }
+        return helperWrapper.response(res, 200, "succes get data by id", result);
+      } catch (error) {
+        return helperWrapper.response(
+          res,
+          400,
+          `bad request (${error.message})`,
+          null
+        );
+      }
+    },
   postMerchant: async (req, res) => {
     try {
       const { id_merchant, namaResto, alamat, phone, detailGedung, jamOprasi, kategori } =
