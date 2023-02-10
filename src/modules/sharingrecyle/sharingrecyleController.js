@@ -1,7 +1,7 @@
 /* eslint-disable guard-for-in */
 /* eslint-disable no-restricted-syntax */
 const helperWrapper = require("../../helper/wrapper");
-const SharingrecyleModel = require("./sharingrecyleModel");
+const sharingrecyleModel = require("./sharingrecyleModel");
 
 module.exports = {
   getAllSharingrecyle: async (req, res) => {
@@ -12,7 +12,7 @@ module.exports = {
       search = search || "";
       sort = sort || "nama ASC";
       let offset = page * limit - limit;
-      const totalData = await SharingrecyleModel.getCountSharingrecyle(search);
+      const totalData = await sharingrecyleModel.getCountSharingrecyle(search);
       const totalPage = Math.ceil(totalData / limit);
       if (totalPage < page) {
         offset = 0;
@@ -25,7 +25,7 @@ module.exports = {
         totalData,
       };
 
-      const result = await SharingrecyleModel.getAllSharingrecyle(
+      const result = await sharingrecyleModel.getAllSharingrecyle(
         limit,
         offset,
         search,
@@ -54,7 +54,7 @@ module.exports = {
   getSharingrecyleById: async (req, res) => {
     try {
       const { id } = req.params;
-      const result = await SharingrecyleModel.getSharingrecyleById(id);
+      const result = await sharingrecyleModel.getSharingrecyleById(id);
       if (result.length < 1) {
         return helperWrapper.response(
           res,
@@ -88,7 +88,7 @@ module.exports = {
         total,
         image: req.file ? req.file.filename : null,
       };
-      const result = await SharingrecyleModel.postSharingrecyle(setData);
+      const result = await sharingrecyleModel.postSharingrecyle(setData);
       return helperWrapper.response(res, 200, "Succes create data", result);
     } catch (error) {
       return helperWrapper.response(

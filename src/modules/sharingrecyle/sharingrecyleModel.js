@@ -1,7 +1,7 @@
 const connection = require("../../config/mysql");
 
 module.exports = {
-  getAllMenu: (limit, offset, search, sort) =>
+  getAllSharingrecyle: (limit, offset, search, sort) =>
     new Promise((resolve, reject) => {
       connection.query(
         `SELECT * FROM sharingrecyle
@@ -16,7 +16,7 @@ module.exports = {
         }
       );
     }),
-  getMenuById: (id) =>
+  getSharingrecyleById: (id) =>
     new Promise((resolve, reject) => {
       connection.query(
         "SELECT * FROM sharingrecyle WHERE id = ?",
@@ -30,7 +30,7 @@ module.exports = {
         }
       );
     }),
-  getCountMenu: (search) =>
+  getCountSharingrecyle: (search) =>
     new Promise((resolve, reject) => {
       connection.query(
         `SELECT COUNT(*) AS total FROM sharingrecyle WHERE nama LIKE '%${search}%'`,
@@ -43,7 +43,7 @@ module.exports = {
         }
       );
     }),
-  postMenu: (data) =>
+  postSharingrecyle: (data) =>
     new Promise((resolve, reject) => {
       const query = connection.query(
         "INSERT INTO sharingrecyle SET ?",
